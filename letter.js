@@ -9,11 +9,12 @@ var Letter = function() {
 //method returns the underlying character if the letter has been guessed
 this.guessedLetter = function() {
       if (this.guessed) {
-        console.log(true);
+        console.log(this.value);
         
       }
       else {
-        console.log(false);
+        console.log("_");
       }
     };
   
+module.export = Letter
