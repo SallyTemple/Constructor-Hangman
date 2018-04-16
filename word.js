@@ -1,6 +1,17 @@
-/* Word.js: Contains a constructor, Word that depends on the Letter constructor. This is used to create an object representing the current word the user is attempting to guess. That means the constructor should define:
-An array of new Letter objects representing the letters of the underlying word
-A function that returns a string representing the word. This should call the function on each letter object (the first function defined in Letter.js) that displays the character or an underscore and concatenate those together.
-A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in Letter.js)*/
 
-var inquirer = require('inquirer');
+var Letter = require('./letter.js');
+
+//constructor function used to create programmers objects
+function WordBee(value) {
+  this.value = value
+  this.letter = [];
+  this.guesses = "";
+  
+  // creates the printInfo method and applies it to all programmer objects
+  this.printInfo = function() {
+    console.log("Name: " + this.name + "\nPosition: " + this.position +
+    "\nAge: " + this.age + "\nLanguages: " + this.language);
+  };
+}
+
+module.exports = WordBee;
