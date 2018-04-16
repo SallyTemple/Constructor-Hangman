@@ -1,7 +1,7 @@
 
 var is_letter_a = require('is_letter_a');
 // constructor function which can be used to create "letter" objects
-var Letter = function() {
+var Letter = function(let) {
       this.value = "";
       this.guessed = false;
 }
