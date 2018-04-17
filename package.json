@@ -1,0 +1,28 @@
+{
+  "name": "PFen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "geocoder": "^0.2.3",
+    "initialize": "^7.3.1",
+    "inquirer": "^5.2.0",
+    "is-letter": "^1.1.1",
+    "is_letter_a": "^2.1.1",
+    "moment": "^2.22.0",
+    "node-spotify-api": "^1.0.7",
+    "prompt": "^1.0.0",
+    "request": "^2.85.0",
+    "spotify-uri": "^1.0.0",
+    "twitter": "^1.7.1",
+    "weather-js": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
