@@ -2,7 +2,7 @@
 var Letter = function(alfa) {
       this.guessed = false;
       this.alfas = alfa.toUpperCase();
-}
+
 
 //method returns the underlying character if the letter has been guessed
 this.guessedLetter = function() {
