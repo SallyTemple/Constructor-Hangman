@@ -13,7 +13,7 @@ wordGuess = {
       chancesLeft: 12,
       spelledWord: null,
 
-      GameBegin: function (letterSelection) {
+function (game) {
             this.startOver();
             this.spelledWord = new Word(this.wordsToGuess[Math.floor(Math.random() * this.wordsToGuess.length)]);
             this.spelledWord.win();
