@@ -13,7 +13,7 @@ this.guessedLetter = function() {
 this.answerGuess = function(letters){
  
     this.guessed = letters === this.alfas? true: false;
-    return this._guessed
+    return this.guessed
    }
 };
      

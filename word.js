@@ -24,8 +24,8 @@ var WordBee = function (wordbee) {
 
   this.soupCharacter = function(soupChara) {
     for(var i= 0; i < this.newLetters.length; i++){
-      if(this.newLetters[i].estimate != true){
-        this.newLetters[i].checkEstimate(character);
+      if(this.newLetters[i].guessed != true){
+        this.newLetters[i].answerGuess(character);
       }  
      }
   };
