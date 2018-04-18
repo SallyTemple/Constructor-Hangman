@@ -13,10 +13,10 @@ wordGuess = {
       chancesLeft: 12,
       spelledWord: null,
 
-function (game) {
+soupCharacter: function() {
             this.startOver();
-            this.spelledWord = new Word(this.wordsToGuess[Math.floor(Math.random() * this.wordsToGuess.length)]);
-            this.spelledWord.win();
+            this.spelledWord = new Word(this.wordsToGuess[Math.floor(Math.random() * this. wordsToGuess.length)]);
+           //this.spelledWord.win();
             this.promptPlayers();
       },
 
@@ -29,7 +29,7 @@ function (game) {
             prompt.get(['letterGuess'], function (err, result) {
                   console.log("Your guessed: " + result.letterGuess);
                   var userGuess = player.spelledWord.checkLetter(result.letterGuess);
-                  
+
                   if (userGuess == 0) {
                         console.log("Try Again");
                         player.chancesLeft--;
@@ -59,5 +59,4 @@ function (game) {
 
 
 };
-
-game.GameBegin();
+wordGuess.soupCharacter();
