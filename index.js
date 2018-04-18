@@ -29,7 +29,7 @@ wordGuess = {
             prompt.get(['letterGuesser'], function (err, result) {
                   console.log("Your guessed: " + result.letterGuesser);
                   var userGuess = player.spelledWord.character(result.letterGuesser);
-                  if (userGuess == 0) {
+                  if (userGuess === -1) {
                         console.log("Try Again");
                         player.chancesLeft;
                   } else {
@@ -45,7 +45,7 @@ wordGuess = {
                   if ((player.chancesLeft > 0) && (player.spelledWord.moreWords == false)) {
                         player.promptPlayers();
                   }
-                  else if (player.chancesLeft == 0) {
+                  else if (player.chancesLeft === 0) {
                         console.log("You did it!", player.spelledWord.wordbee);
                   } else {
                         console.log(player.spelledWord.wordSupplier());
