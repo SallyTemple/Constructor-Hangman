@@ -1,34 +1,42 @@
-
-var Letter = require('./letter.js');
+var letter = require('./letter.js');
 
 //constructor function used to create programmers objects
-var WordBee = function (wordbee) {
+function Word(wordbee) {
   this.newLetters = [];
-  this.wordy = wordbee.split(" ").join(" ");
-  this.moreWords =function() {
+  this.wordbee = wordbee;
+  this.moreWords = false;
 
-    var character = [];
-    if( this.newLetters.length === 0){
-      for (var i=0; i < this.wordy.length; i++){
-        this.newLetters.push(new Letter(this.wordy[i]));
-      }
+  this.wrd = function () {
+    for (var i = 0; i < this.wordbee.length; i++) {
+      this.newLetters.push(new letter(this.wordbee[i]));
     }
-
-    for(var i=0; i < this.newLetters.length; i++){
-      character.push(this.newLetters[i].alphabetsoup());
-    }
- 
-    return character.join(" ");
-  }; 
-  
-
-  this.soupCharacter = function(soupChara) {
-    for(var i= 0; i < this.newLetters.length; i++){
-      if(this.newLetters[i].guessed != true){
-        this.newLetters[i].answerGuess(character);
-      }  
-     }
   };
 
+  this.moreWord = function () {
+    this.moreWords = this.newLetters.every(function (lettered) {
+      return lettered.guessed;
+    });
+    return this.moreWords;
+  };
+
+  this.character = function (letterGuesser) {
+    var startOver = 0;
+
+    for (var i = 0; i < this.newLetters.length; i++) {
+      if (this.newLetters[i].alfa == letterGuesser) {
+        this.newLetters[i].guessed = true;
+        startOver++;
+      }
+    }
+    return startOver;
+  };
+
+  this.wordSupplier = function () {
+    var lttrs = " ";
+    for (var i = 0; i < this.newLetters.length; i++) {
+      lttrs += this.newLetters[i].letterRender();
+    }
+    return lttrs;
+  };
 }
-  module.exports = WordBee;
+module.exports = Word;

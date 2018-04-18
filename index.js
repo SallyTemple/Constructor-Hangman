@@ -13,10 +13,10 @@ wordGuess = {
       chancesLeft: 12,
       spelledWord: null,
 
-soupCharacter: function() {
+      soupCharacter: function () {
             this.startOver();
-            this.spelledWord = new Word(this.wordsToGuess[Math.floor(Math.random() * this. wordsToGuess.length)]);
-           //this.spelledWord.win();
+            this.spelledWord = new Word(this.wordsToGuess[Math.floor(Math.random() * this.wordsToGuess.length)]);
+            this.spelledWord.wrd();
             this.promptPlayers();
       },
 
@@ -26,32 +26,29 @@ soupCharacter: function() {
 
       promptPlayers: function () {
             var player = this;
-            prompt.get(['letterGuess'], function (err, result) {
-                  console.log("Your guessed: " + result.letterGuess);
-                  var userGuess = player.spelledWord.checkLetter(result.letterGuess);
-
+            prompt.get(['letterGuesser'], function (err, result) {
+                  console.log("Your guessed: " + result.letterGuesser);
+                  var userGuess = player.spelledWord.character(result.letterGuesser);
                   if (userGuess == 0) {
                         console.log("Try Again");
-                        player.chancesLeft--;
-
+                        player.chancesLeft;
                   } else {
                         console.log("Super");
                         if (player.spelledWord.moreWord()) {
                               console.log("You did it!");
-                              console.log("-------------------");
                               return;
                         }
                   }
 
                   console.log("Chances Left: " + player.chancesLeft);
                   console.log("-------------------");
-                  if ((player.chancesLeft > 0) && (player.spelledWord.found == false)) {
+                  if ((player.chancesLeft > 0) && (player.spelledWord.moreWords == false)) {
                         player.promptPlayers();
                   }
                   else if (player.chancesLeft == 0) {
-                        console.log("You did it!", player.spelledWord.target);
+                        console.log("You did it!", player.spelledWord.wordbee);
                   } else {
-                        console.log(player.spelledWord.wordRender());
+                        console.log(player.spelledWord.wordSupplier());
                   }
             });
 
