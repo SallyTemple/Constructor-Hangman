@@ -1,7 +1,7 @@
 // constructor function which can be used to create "letter" objects
 var letter = function(alfa) {
       this.guessed = false;
-      this.alfa = alfa.toUpperCase();
+      this.alfa = alfa
 
 
 //method returns the underlying character if the letter has been guessed

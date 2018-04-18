@@ -2,9 +2,9 @@
 var Word = require('./word.js');
 var prompt = require('prompt');
 
-
+console.log("Welcome");
 console.log("Guess a letter of an animal");
-console.log("-----------------------------");
+console.log("Enjoy!!!");
 prompt.start();
 
 wordGuess = {
@@ -29,7 +29,7 @@ wordGuess = {
             prompt.get(['letterGuesser'], function (err, result) {
                   console.log("Your guessed: " + result.letterGuesser);
                   var userGuess = player.spelledWord.character(result.letterGuesser);
-                  if (userGuess === -1) {
+                  if (userGuess == 0) {
                         console.log("Try Again");
                         player.chancesLeft;
                   } else {
@@ -41,11 +41,10 @@ wordGuess = {
                   }
 
                   console.log("Chances Left: " + player.chancesLeft);
-                  console.log("-------------------");
                   if ((player.chancesLeft > 0) && (player.spelledWord.moreWords == false)) {
                         player.promptPlayers();
                   }
-                  else if (player.chancesLeft === 0) {
+                  else if (player.chancesLeft == 0) {
                         console.log("You did it!", player.spelledWord.wordbee);
                   } else {
                         console.log(player.spelledWord.wordSupplier());

@@ -34,7 +34,7 @@ function Word(wordbee) {
   this.wordSupplier = function () {
     var lttrs = " ";
     for (var i = 0; i < this.newLetters.length; i++) {
-      lttrs += this.newLetters[i].letterRender();
+      lttrs += this.newLetters[i].answerGuess();
     }
     return lttrs;
   };
